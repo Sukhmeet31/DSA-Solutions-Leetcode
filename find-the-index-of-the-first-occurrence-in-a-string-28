@@ -1,0 +1,16 @@
+link : https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if (needle.isEmpty()) return 0; // empty case
+
+        int n = haystack.length(), m = needle.length();
+        // ensure substring range is valid!!!!!!1
+        for(int i= 0;i<= n -m ; i++) {
+            if( haystack.substring(i, i + needle.length()).equals(needle) ) {
+                return i;
+            } 
+        }
+         return -1;
+    }
+}
